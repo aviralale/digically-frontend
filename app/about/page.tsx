@@ -1,76 +1,7 @@
-"use client";
-import React, { useState } from "react";
-import {
-  ArrowRight,
-  Users,
-  Target,
-  Zap,
-  Heart,
-  Globe,
-  TrendingUp,
-  Award,
-  Lightbulb,
-  Star,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import React from "react";
+import { ArrowRight, Target, Zap } from "lucide-react";
 
 export default function AboutPage() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "CMO at TechFlow",
-      content:
-        "Digically transformed our digital presence completely. Their strategic approach exceeded all expectations.",
-      avatar: "SC",
-    },
-    {
-      name: "Marcus Johnson",
-      role: "Founder at StartupX",
-      content:
-        "The team helped us achieve 300% growth in social engagement with innovative thinking.",
-      avatar: "MJ",
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Brand Director at Luxe",
-      content:
-        "Working with Digically was a game-changer. They understand brands at a deep level.",
-      avatar: "ER",
-    },
-  ];
-
-  const values = [
-    {
-      icon: <Lightbulb className="w-6 h-6" />,
-      title: "INNOVATION",
-      description:
-        "We push boundaries to create breakthrough digital experiences.",
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: "PASSION",
-      description:
-        "Every project receives our full dedication and creative energy.",
-      color: "from-pink-500 to-red-500",
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "PRECISION",
-      description: "Data-driven strategies ensure measurable success.",
-      color: "from-blue-500 to-purple-500",
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: "IMPACT",
-      description: "We create solutions that make a lasting difference.",
-      color: "from-green-500 to-cyan-500",
-    },
-  ];
-
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -128,11 +59,11 @@ export default function AboutPage() {
               <p className="text-gray-600 text-lg sm:text-xl mb-6 lg:mb-8 leading-relaxed">
                 Founded in 2019 by creative rebels and strategic thinkers,
                 Digically emerged from a simple belief: digital marketing
-                shouldn't be boring.
+                shouldn&apos;t be boring.
               </p>
               <p className="text-gray-600 text-base sm:text-lg mb-8 lg:mb-10 leading-relaxed">
-                Today, we're a full-service digital agency combining artistic
-                vision with analytical precision, helping brands create
+                Today, we&apos;re a full-service digital agency combining
+                artistic vision with analytical precision, helping brands create
                 authentic connections.
               </p>
               <div className="flex items-center justify-center sm:justify-start space-x-6 sm:space-x-8">
@@ -171,82 +102,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      {/* <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6">
-              WHAT OUR
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                {" "}
-                CLIENTS{" "}
-              </span>
-              SAY
-            </h2>
-          </div>
-
-          <div className="relative">
-            <div className="bg-white rounded-2xl lg:rounded-3xl p-8 sm:p-10 lg:p-12 shadow-2xl">
-              <div className="text-center">
-                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8">
-                  <span className="text-xl lg:text-2xl font-black text-white">
-                    {testimonials[activeTestimonial].avatar}
-                  </span>
-                </div>
-                <blockquote className="text-xl sm:text-2xl font-medium text-gray-900 mb-6 lg:mb-8 leading-relaxed">
-                  "{testimonials[activeTestimonial].content}"
-                </blockquote>
-                <div className="text-lg sm:text-xl font-bold text-purple-600 mb-2">
-                  {testimonials[activeTestimonial].name}
-                </div>
-                <div className="text-gray-600 text-sm sm:text-base">
-                  {testimonials[activeTestimonial].role}
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-center items-center mt-6 lg:mt-8 space-x-4">
-              <button
-                onClick={() =>
-                  setActiveTestimonial((prev) =>
-                    prev === 0 ? testimonials.length - 1 : prev - 1
-                  )
-                }
-                className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
-              </button>
-
-              <div className="flex space-x-2">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveTestimonial(index)}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
-                      index === activeTestimonial
-                        ? "bg-purple-600"
-                        : "bg-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={() =>
-                  setActiveTestimonial((prev) =>
-                    prev === testimonials.length - 1 ? 0 : prev + 1
-                  )
-                }
-                className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      */}
-
       {/* CTA Section */}
       <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 via-purple-900 to-black text-white">
         <div className="max-w-5xl mx-auto text-center">
@@ -269,8 +124,9 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-300 mb-10 lg:mb-12 max-w-3xl mx-auto">
-            Let's collaborate to transform your brand's digital presence and
-            create experiences that your audience will never forget.
+            Let&apos;s collaborate to transform your brand&apos;s digital
+            presence and create experiences that your audience will never
+            forget.
           </p>
 
           <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-black text-base sm:text-lg flex items-center space-x-3 hover:shadow-2xl transition-all hover:scale-105 mx-auto group">

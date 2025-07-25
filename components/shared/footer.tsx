@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function Footer() {
@@ -9,10 +10,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="col-span-2 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
-              <span className="font-bold text-xl text-gray-900">DIGICALLY</span>
+              <Image src="/logo.png" alt="Logo" width={128} height={24} />
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-4 max-w-xs">
               Follow us on social media to stay updated with the latest tips,

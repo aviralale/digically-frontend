@@ -1,18 +1,10 @@
-"use client";
-import React, { useState } from "react";
 import {
   ArrowRight,
   Users,
   Target,
   Zap,
-  Heart,
-  Globe,
   TrendingUp,
-  Award,
   Lightbulb,
-  Star,
-  ChevronLeft,
-  ChevronRight,
   CheckCircle,
   Palette,
   Code,
@@ -26,8 +18,6 @@ import {
 } from "lucide-react";
 
 export default function ServicesPage() {
-  const [activeService, setActiveService] = useState(0);
-
   const mainServices = [
     {
       icon: <Palette className="w-8 h-8" />,
@@ -242,7 +232,6 @@ export default function ServicesPage() {
               <div
                 key={index}
                 className={`${service.bgPattern} p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group cursor-pointer`}
-                onClick={() => setActiveService(index)}
               >
                 <div
                   className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-6 group-hover:scale-110 transition-transform`}
@@ -371,22 +360,21 @@ export default function ServicesPage() {
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-black mb-8">
-            LET'S
+            LET&apos;S
             <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
-              {" "}
-              BUILD{" "}
+              BUILD
             </span>
             SOMETHING
             <br />
             <span className="bg-gradient-to-r from-yellow-400 to-red-400 bg-clip-text text-transparent">
               AMAZING
-            </span>{" "}
+            </span>
             TOGETHER
           </h2>
 
           <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your digital presence? Let's discuss your project
-            and create a strategy that drives real results.
+            Ready to transform your digital presence? Let&apos;s discuss your
+            project and create a strategy that drives real results.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

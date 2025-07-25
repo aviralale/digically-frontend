@@ -1,18 +1,4 @@
 import React from "react";
-import {
-  ArrowRight,
-  Star,
-  Users,
-  TrendingUp,
-  BarChart3,
-  Eye,
-  Search,
-  Share2,
-  Instagram,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
 import HeroSection from "@/components/home/hero-section";
 import ServicesSection from "@/components/home/services-section";
 import AboutSection from "@/components/home/about-section";

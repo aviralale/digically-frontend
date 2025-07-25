@@ -19,7 +19,8 @@ export default function ProjectsSection() {
             <div className="relative z-10">
               <h3 className="text-4xl font-black mb-6">IPHONE 15</h3>
               <p className="text-orange-100 mb-8 text-xl leading-relaxed">
-                Complete digital campaign for Apple's latest flagship device.
+                Complete digital campaign for Apple&apos;s latest flagship
+                device.
               </p>
               <button className="bg-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/30 transition-colors">
                 View Case Study
@@ -30,7 +31,9 @@ export default function ProjectsSection() {
           </div>
           <div className="bg-gradient-to-br from-pink-500 to-red-600 rounded-[2rem] p-12 text-white relative overflow-hidden group hover:scale-105 transition-transform">
             <div className="relative z-10">
-              <h3 className="text-4xl font-black mb-6">VICTORIA'S SECRET</h3>
+              <h3 className="text-4xl font-black mb-6">
+                VICTORIA&apos;S SECRET
+              </h3>
               <p className="text-pink-100 mb-8 text-xl leading-relaxed">
                 Brand revitalization and social media strategy overhaul.
               </p>

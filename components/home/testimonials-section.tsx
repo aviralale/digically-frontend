@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
             TESTIMONIALS
           </div>
           <h2 className="text-6xl font-black text-gray-900 mb-10 leading-tight">
-            HERE'S WHAT PEOPLE
+            HERE&apos;S WHAT PEOPLE
             <br />
             SAY ABOUT OUR WORK
           </h2>
@@ -23,9 +23,9 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <p className="text-red-100 mb-8 text-lg leading-relaxed">
-              "Digically transformed our digital presence completely. The
+              &quot;Digically transformed our digital presence completely. The
               results exceeded our expectations and our engagement rates have
-              never been higher."
+              never been higher.&quot;
             </p>
             <div className="font-black text-lg">
               - Sarah Johnson, CEO TechStart
@@ -38,8 +38,9 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <p className="text-orange-100 mb-8 text-lg leading-relaxed">
-              "Professional, creative, and results-driven. They understood our
-              vision and brought it to life in ways we never imagined possible."
+              &quot;Professional, creative, and results-driven. They understood
+              our vision and brought it to life in ways we never imagined
+              possible.&quot;
             </p>
             <div className="font-black text-lg">
               - Marcus Chen, Creative Director
@@ -52,9 +53,9 @@ export default function TestimonialsSection() {
               ))}
             </div>
             <p className="text-blue-100 mb-8 text-lg leading-relaxed">
-              "The team at Digically is exceptional. Their strategic approach
-              and creative execution helped us achieve a 300% increase in
-              conversions."
+              &quot;The team at Digically is exceptional. Their strategic
+              approach and creative execution helped us achieve a 300% increase
+              in conversions.&quot;
             </p>
             <div className="font-black text-lg">
               - Emma Rodriguez, Marketing Manager

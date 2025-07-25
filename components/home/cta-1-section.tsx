@@ -28,7 +28,7 @@ export default function CTASection1() {
                 </span>
                 <span className="text-white"> YOUR</span>
                 <br />
-                <span className="text-white">BRAND'S </span>
+                <span className="text-white">BRAND&apos;S </span>
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   STRATEGIC
                 </span>

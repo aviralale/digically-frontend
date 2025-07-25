@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart3, Eye, Search, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import React from "react";
 
 export default function ServicesSection() {
