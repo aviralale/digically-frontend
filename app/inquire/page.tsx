@@ -120,7 +120,7 @@ export default function ContactPage() {
     "$15K - $50K",
     "$50K - $100K",
     "$100K+",
-    "Let's Discuss",
+    "Let&apos;s Discuss",
   ];
 
   const features = [
@@ -188,7 +188,7 @@ export default function ContactPage() {
             </div>
 
             <h1 className="text-6xl sm:text-7xl lg:text-9xl font-black leading-none mb-8 tracking-tight">
-              LET'S
+              LET&apos;S
               <br />
               <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
                 TALK
@@ -196,7 +196,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-xl lg:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Ready to transform your digital presence? Let's start a
+              Ready to transform your digital presence? Let&apos;s start a
               conversation about your goals and create something extraordinary
               together.
             </p>
@@ -260,8 +260,8 @@ export default function ContactPage() {
                   </span>
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Fill out the form below and we'll get back to you within 2
-                  hours.
+                  Fill out the form below and we&apos;ll get back to you within
+                  2 hours.
                 </p>
               </div>
 
@@ -274,7 +274,8 @@ export default function ContactPage() {
                     Message Sent Successfully!
                   </h3>
                   <p className="text-gray-600">
-                    We'll get back to you within 2 hours during business days.
+                    We&apos;ll get back to you within 2 hours during business
+                    days.
                   </p>
                 </div>
               ) : (
@@ -400,8 +401,8 @@ export default function ContactPage() {
                   </span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Choose the best way to reach us. We're here to help bring your
-                  vision to life.
+                  Choose the best way to reach us. We&apos;re here to help bring
+                  your vision to life.
                 </p>
               </div>
 
@@ -475,8 +476,8 @@ export default function ContactPage() {
               SAY
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our amazing clients
-              have to say about working with us.
+              Don&apos;t just take our word for it. Here&apos;s what our amazing
+              clients have to say about working with us.
             </p>
           </div>
 
@@ -495,7 +496,7 @@ export default function ContactPage() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic">
-                  "{testimonial.message}"
+                  &qout;{testimonial.message}&quot;
                 </p>
                 <div>
                   <div className="font-bold text-gray-900">
@@ -524,7 +525,7 @@ export default function ContactPage() {
               QUESTIONS
             </h2>
             <p className="text-lg text-gray-600">
-              Got questions? We've got answers to help you get started.
+              Got questions? We&apos;ve got answers to help you get started.
             </p>
           </div>
 
@@ -533,7 +534,7 @@ export default function ContactPage() {
               {
                 question: "How long does a typical project take?",
                 answer:
-                  "Project timelines vary based on scope and complexity. Simple projects take 2-4 weeks, while comprehensive rebrands or complex web applications can take 8-16 weeks. We'll provide a detailed timeline during our initial consultation.",
+                  "Project timelines vary based on scope and complexity. Simple projects take 2-4 weeks, while comprehensive rebrands or complex web applications can take 8-16 weeks. We&apos;ll provide a detailed timeline during our initial consultation.",
               },
               {
                 question: "Do you work with small businesses?",
@@ -541,14 +542,14 @@ export default function ContactPage() {
                   "Absolutely! We work with businesses of all sizes, from startups to Fortune 500 companies. We have flexible packages and solutions tailored to different budgets and needs.",
               },
               {
-                question: "What's included in your ongoing support?",
+                question: "What&apos;s included in your ongoing support?",
                 answer:
                   "Our ongoing support includes regular maintenance, updates, performance monitoring, and priority customer service. We also provide monthly reports and are available for consultations as needed.",
               },
               {
                 question: "Can you help with existing websites/brands?",
                 answer:
-                  "Yes! We can work with your existing assets, whether you need a complete overhaul, minor updates, or ongoing optimization. We'll assess what you have and recommend the best path forward.",
+                  "Yes! We can work with your existing assets, whether you need a complete overhaul, minor updates, or ongoing optimization. We&apos;ll assess what you have and recommend the best path forward.",
               },
             ].map((faq, index) => (
               <div
@@ -587,9 +588,9 @@ export default function ContactPage() {
           </h2>
 
           <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Whether you're starting from scratch or looking to elevate your
-            existing brand, we're here to make it happen. Let's grab a coffee
-            (virtual or real) and discuss your vision.
+            Whether you&apos;re starting from scratch or looking to elevate your
+            existing brand, we&apos;re here to make it happen. Let&apos;s grab a
+            coffee (virtual or real) and discuss your vision.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
