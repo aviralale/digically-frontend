@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight, Target, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -129,10 +130,13 @@ export default function AboutPage() {
             forget.
           </p>
 
-          <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-black text-base sm:text-lg flex items-center space-x-3 hover:shadow-2xl transition-all hover:scale-105 mx-auto group">
+          <Link
+            href="/inquire"
+            className="bg-gradient-to-r w-1/3 from-orange-500 to-red-500 text-white px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full font-black text-base sm:text-lg flex items-center space-x-3 hover:shadow-2xl transition-all hover:scale-105 mx-auto group"
+          >
             <span>Start Your Journey</span>
             <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
       </section>
     </div>

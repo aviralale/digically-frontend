@@ -16,6 +16,7 @@ import {
   Megaphone,
   Play,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function ServicesPage() {
   const mainServices = [
@@ -378,10 +379,13 @@ export default function ServicesPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-purple-600 px-10 py-5 rounded-full font-black text-lg flex items-center space-x-3 hover:bg-purple-50 transition-all hover:shadow-2xl hover:scale-105 group">
+            <Link
+              href="/inquire"
+              className="bg-white w-1/3 text-purple-600 px-10 py-5 rounded-full font-black text-lg flex items-center space-x-3 hover:bg-purple-50 transition-all hover:shadow-2xl hover:scale-105 group"
+            >
               <span>Get Free Consultation</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

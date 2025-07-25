@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
 
 export default function Navbar() {
@@ -24,9 +23,12 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="flex space-x-4">
-        <Button className="border bg-transparent border-white/30 px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-purple-600 transition-all">
+        <Link
+          href="/inquire"
+          className="border bg-transparent border-white/30 px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-purple-600 transition-all"
+        >
           Get Started
-        </Button>
+        </Link>
       </div>
     </nav>
   );

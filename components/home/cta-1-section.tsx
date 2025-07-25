@@ -1,4 +1,5 @@
 import { ArrowUpRight, Target } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function CTASection1() {
@@ -51,9 +52,12 @@ export default function CTASection1() {
 
             {/* Right side - CTA Button */}
             <div className="flex-shrink-0">
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 w-24 h-24 md:w-28 md:h-28 rounded-3xl font-black text-xl flex items-center justify-center transition-all hover:scale-105 hover:rotate-6 shadow-2xl group">
+              <Link
+                href="/inquire"
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-slate-900 w-24 h-24 md:w-28 md:h-28 rounded-3xl font-black text-xl flex items-center justify-center transition-all hover:scale-105 hover:rotate-6 shadow-2xl group"
+              >
                 <ArrowUpRight className="w-10 h-10 md:w-12 md:h-12 group-hover:scale-110 transition-transform" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

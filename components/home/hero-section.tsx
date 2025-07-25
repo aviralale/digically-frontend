@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -42,10 +43,13 @@ const HeroSection = () => {
               not only capture attention.
             </p>
 
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold flex items-center space-x-3 hover:bg-purple-50 transition-all hover:shadow-xl text-base group">
+            <Link
+              href="/inquire"
+              className="bg-white w-1/3 text-purple-600 px-8 py-4 rounded-full font-bold flex items-center space-x-3 hover:bg-purple-50 transition-all hover:shadow-xl text-base group"
+            >
               <span>Get Started</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
 
           {/* Right Content - 3D Elements */}

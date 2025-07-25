@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function CTASection() {
@@ -12,10 +13,13 @@ export default function CTASection() {
           <br />
           WITH Digically
         </h2>
-        <button className="bg-white text-blue-800 px-12 py-6 rounded-full font-black text-xl flex items-center space-x-4 mx-auto hover:bg-gray-100 transition-all hover:scale-105">
+        <Link
+          href="/inquire"
+          className="bg-white w-1/4 text-blue-800 px-12 py-6 rounded-full font-black text-xl flex items-center space-x-4 mx-auto hover:bg-gray-100 transition-all hover:scale-105"
+        >
           <span>Start Today</span>
           <ArrowRight className="w-6 h-6" />
-        </button>
+        </Link>
       </div>
     </section>
   );
