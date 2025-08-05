@@ -80,22 +80,6 @@ const HeroSection = () => {
             className="relative order-2 lg:order-1"
             variants={itemVariants}
           >
-            {/* 3D Book Icon - Responsive sizing with motion */}
-            <motion.div
-              className="absolute -top-4 sm:-top-6 lg:-top-8 -left-2 sm:-left-3 lg:-left-4 w-12 h-10 sm:w-16 sm:h-12 lg:w-20 lg:h-16 transform -rotate-12"
-              variants={floatingVariants}
-              animate="animate"
-              whileHover={{ scale: 1.1, rotate: -20 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-500 rounded-md lg:rounded-lg shadow-xl relative">
-                <div className="absolute inset-1 sm:inset-2 bg-white rounded-sm lg:rounded-md"></div>
-                <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 lg:top-3 lg:left-3 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-3 lg:h-3 bg-white rounded-full"></div>
-                </div>
-              </div>
-            </motion.div>
-
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black leading-none mb-4 sm:mb-6 lg:mb-8 tracking-tight"
               variants={itemVariants}
