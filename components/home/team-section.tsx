@@ -6,60 +6,52 @@ import { easeOut, motion } from "framer-motion";
 export default function TeamSection() {
   const teamMembers = [
     {
-      name: "JOHN SMITH",
-      role: "CEO & FOUNDER",
+      name: "Elina",
+      role: "Chief Operations Executive",
       bg: "bg-gradient-to-br from-purple-800 to-pink-800",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "/Eleey.jpg",
     },
     {
-      name: "JANE DOE",
-      role: "Chief Creative Officer",
+      name: "Aviral",
+      role: "Web Developer",
       bg: "bg-gradient-to-br from-red-500 to-orange-500",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b830?w=400&h=400&fit=crop&crop=face",
+      image: "/aviral.jpeg",
     },
     {
-      name: "EMILY DAVIS\nRACHEL LEE",
-      role: "Influencer Relations\nSpecialist",
+      name: "Kriti",
+      role: "Web Developer",
       bg: "bg-gradient-to-br from-purple-400 to-blue-400",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
+      image: "/Kriti.jpeg",
     },
     {
-      name: "OLIVIA WHITE\nDAVID KIM\nSOPHIA PATEL",
-      role: "Marketing Automation\nSpecialist",
+      name: "Gobin",
+      role: "Senior Graphic Designer",
       bg: "bg-gradient-to-br from-purple-400 to-indigo-400",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: "/gobin.JPG",
     },
     {
-      name: "LIAM MITCHELL",
-      role: "Brand Strategist",
+      name: "Ajay",
+      role: "Graphic Designer",
       bg: "bg-gradient-to-br from-pink-300 to-rose-300",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "",
     },
     {
-      name: "BELLA TORRES",
-      role: "Video Production Manager",
+      name: "Sagar",
+      role: "SEO Executive",
       bg: "bg-gradient-to-br from-purple-800 to-pink-800",
-      image:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
+      image: "/sagar.jpg",
     },
     {
-      name: "MICHAEL BROWN",
-      role: "Social Media Manager",
+      name: "Sworup",
+      role: "Video Editor",
       bg: "bg-gradient-to-br from-red-500 to-orange-500",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      image: "/Swarup.JPG",
     },
     {
-      name: "LINDA MARTINEZ",
-      role: "SEO Specialist",
+      name: "Ankit",
+      role: "Social Media Executive",
       bg: "bg-gradient-to-br from-purple-400 to-blue-400",
-      image:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
+      image: "/ankitdawadii.png",
     },
   ];
 
