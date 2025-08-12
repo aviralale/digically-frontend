@@ -152,6 +152,7 @@ export default function FounderSection() {
                   src="/founder.jpeg"
                   alt="Rinal Siddhpura - Founder"
                   className="w-full h-full object-cover"
+                  fill
                 />
 
                 {/* Gradient overlay */}

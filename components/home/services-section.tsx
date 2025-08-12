@@ -115,7 +115,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 bg-gradient-to-br to-purple-600 via-red-500 from-orange-500 text-white">
+    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 bg-gradient-to-bl to-purple-600 via-red-500 from-orange-500 text-white">
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}

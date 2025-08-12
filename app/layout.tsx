@@ -1,17 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Space_Grotesk,
+  Poppins,
+  Playfair_Display,
+  Montserrat,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Fonts
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playFairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -27,10 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-purple-600 via-red-500 to-orange-500`}
+        className={`${spaceGrotesk.variable} ${playFairDisplay.variable} ${poppins.variable} ${montserrat.variable} antialiased bg-gradient-to-br from-purple-600 via-red-500 to-orange-500`}
       >
         <Navbar />
-        <div className="pt-16">{children}</div>
+        <div className="pt-16 font-poppins">{children}</div>
         <Footer />
       </body>
     </html>
