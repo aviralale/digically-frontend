@@ -119,7 +119,7 @@ const TermsAndConditions: React.FC = () => {
 
     return (
       <div className="space-y-2">
-        <p className="text-gray-700 mb-2">You're responsible for:</p>
+        <p className="text-gray-700 mb-2">You&apos;re responsible for:</p>
         <ul className="space-y-2">
           {content.map((item, index) => (
             <li key={index} className="flex items-start space-x-2">
@@ -145,7 +145,7 @@ const TermsAndConditions: React.FC = () => {
             Terms & Conditions
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Clear, straightforward terms for using Digically's services
+            Clear, straightforward terms for using Digically&apos;s services
           </p>
         </div>
 

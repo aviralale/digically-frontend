@@ -10,7 +10,6 @@ import {
   FileText,
   Mail,
   Eye,
-  Cookie,
   Settings,
 } from "lucide-react";
 
