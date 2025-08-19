@@ -104,13 +104,13 @@ export default function TeamSection() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-orange-500  relative">
       {/* Clean minimal header */}
       <div className="max-w-4xl mx-auto text-center mb-16">
-        <h2 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-4">
+        <h2 className="text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
           Meet Our Team
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-muted max-w-2xl mx-auto">
           The passionate minds behind our innovation
         </p>
       </div>
