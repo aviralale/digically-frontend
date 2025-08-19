@@ -17,7 +17,7 @@ export default function Footer() {
               trends, and insights in digital marketing.
             </p>
             <p className="text-white font-medium text-sm">
-              hello@digically.com
+              digicallyindia@gmail.com
             </p>
           </div>
 
@@ -27,23 +27,16 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="/services"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
                   Services
                 </a>
               </li>
+
               <li>
                 <a
-                  href="#"
-                  className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
-                >
-                  Product
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="/about"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
                   About Us
@@ -58,23 +51,16 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="/inquire"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
                   FAQ
                 </a>
               </li>
+
               <li>
                 <a
-                  href="#"
-                  className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
-                >
-                  Articles
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="/inquire"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
                   Contact Us
@@ -91,23 +77,23 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/digically_"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
-                  Dribbble
+                  Instagram
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/digically/"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
-                  Behance
+                  Facebook
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/digicallyindia/"
                   className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
                 >
                   LinkedIn
@@ -127,13 +113,13 @@ export default function Footer() {
 
             <div className="flex items-center space-x-8">
               <a
-                href="#"
+                href="/privacy"
                 className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
               >
                 Privacy Policy
               </a>
               <a
-                href="#"
+                href="/terms"
                 className="text-gray-200 hover:text-gray-50 transition-colors text-sm"
               >
                 Term of Services

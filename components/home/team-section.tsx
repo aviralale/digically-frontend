@@ -137,6 +137,7 @@ export default function TeamSection() {
               <Image
                 src={member.image}
                 alt={member.name}
+                fill
                 className="w-full h-full object-cover"
               />
 
