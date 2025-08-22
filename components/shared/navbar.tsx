@@ -272,13 +272,14 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
+                <a
                   href="/inquire"
+                  target="_blank"
                   className="border bg-transparent border-white/30 px-8 py-3 rounded-full text-lg font-medium hover:bg-white hover:text-purple-600 transition-all"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Get Started
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>

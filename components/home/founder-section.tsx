@@ -220,33 +220,27 @@ export default function FounderSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p className="text-lg leading-relaxed">
-                From the earliest days, marketing was a passion. I&apos;ve
-                always believed that with the right strategy, right message, and
-                right timing can transform any brand to a successful venture.
+                Marketing has always been my passion—turning the right strategy,
+                message, and timing into brand success.
               </p>
 
               <p className="text-lg leading-relaxed">
-                What started as a passion project and a desire to help local
-                businesses in Ahmedabad grow online,now has become a digital
-                growth partner for various brands across industries. Passionate
-                entrepreneurs and their stories have always intrigues me and
-                helping them unlock their potential has been the most rewarding
-                part with Digically.
+                What began as helping local businesses in Ahmedabad has grown
+                into a trusted digital partner for brands across industries.
               </p>
 
               <p className="text-lg leading-relaxed">
-                At Digically, our team believes in building brand stories,
-                creating meaningful connections, and creating a digital value
-                which will be remembered for a long time.
+                At Digically, we craft brand stories, build meaningful
+                connections, and create lasting digital value.
               </p>
 
               <p className="text-lg leading-relaxed">
-                Whether you are a small business looking to scale or a brand
-                looking to burst into the digital space. DIgically has your back
+                Whether you’re scaling a small business or launching big,
+                Digically has your back.
               </p>
 
-              <p className="text-lg leading-relaxed">
-                Boost Your Brand with Digically
+              <p className="text-lg leading-relaxed font-semibold">
+                Boost Your Brand with Digically.
               </p>
             </motion.div>
 

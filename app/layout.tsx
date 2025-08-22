@@ -38,9 +38,7 @@ export const metadata: Metadata = {
   title: "Digically",
   description:
     "SEO | Social Media Marketing | Paid Ads Full-service digital marketing agency delivering measurable growth",
-  icons: {
-    icon: "/logo.png",
-  },
+  icons: "/favicon.png",
 };
 
 export default function RootLayout({

@@ -80,8 +80,8 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />,
       title: "Call Us",
-      primary: "+91-1234567890",
-      secondary: "+91-1234567889",
+      primary: "+91-9978488488",
+      secondary: "+91-9998555766",
       color: "from-blue-500 to-cyan-500",
       bgColor: "from-blue-50 to-cyan-50",
     },

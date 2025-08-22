@@ -29,7 +29,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-6 sm:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-4">
-              A creative digital agency that transforms brands through
+              A Creative Digital Agency that transforms brands through
               innovative strategies, stunning design, and data-driven results.
             </p>
 

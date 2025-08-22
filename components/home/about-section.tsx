@@ -136,7 +136,7 @@ export default function AboutSection() {
           {/* Left Content */}
           <motion.div className="order-2 lg:order-1" variants={textVariants}>
             <motion.div
-              className="text-xs sm:text-sm font-bold text-pink-600 mb-4 sm:mb-6 tracking-wide uppercase"
+              className="text-2xl font-bold text-pink-600 mb-4 sm:mb-6 tracking-wide uppercase"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
