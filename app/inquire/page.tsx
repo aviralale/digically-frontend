@@ -72,8 +72,8 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />,
       title: "Email Us",
-      primary: "digicallyindia@gmail.com",
-      secondary: "digicallyindia@gmail.com",
+      primary: "india@digically.in",
+      secondary: "india@digically.in",
       color: "from-purple-500 to-pink-500",
       bgColor: "from-purple-50 to-pink-50",
     },

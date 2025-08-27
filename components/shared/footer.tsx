@@ -16,9 +16,7 @@ export default function Footer() {
               Follow us on social media to stay updated with the latest tips,
               trends, and insights in digital marketing.
             </p>
-            <p className="text-white font-medium text-sm">
-              digicallyindia@gmail.com
-            </p>
+            <p className="text-white font-medium text-sm">india@digically.in</p>
           </div>
 
           {/* Home Column */}
