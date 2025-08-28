@@ -6,6 +6,15 @@ import Image from "next/image";
 export default function TeamSection() {
   const teamMembers = [
     {
+      name: "Bhavik Siddhpura",
+
+      role: "Executive Director",
+
+      bg: "bg-gradient-to-br from-purple-800 to-pink-800",
+
+      image: "/bhavik-siddhpura-min.JPG",
+    },
+    {
       name: "Elina",
 
       role: "Chief Operations Executive",
