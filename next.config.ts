@@ -4,6 +4,9 @@ const nextConfig = {
   swcMinify: true,
   // basePath: '', // should be empty unless you serve from subpath
   // assetPrefix: '',
+  images: {
+    domains: ["api.digically.in"],
+  },
 };
 
 module.exports = nextConfig;

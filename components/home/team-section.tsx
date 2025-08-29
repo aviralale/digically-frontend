@@ -1,99 +1,44 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { easeOut, motion } from "framer-motion";
 import Image from "next/image";
+import axios from "axios";
+
+interface TeamMember {
+  id: number;
+  full_name: string;
+  designation: string;
+  profile_picture: string;
+}
+
+interface TeamMemberResponse {
+  results: TeamMember[];
+}
 
 export default function TeamSection() {
-  const teamMembers = [
-    {
-      name: "Bhavik Siddhpura",
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-      role: "Executive Director",
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get<TeamMemberResponse>(
+          "https://api.digically.in/api/teams/team/"
+        );
+        setTeamMembers(response.data.results);
+        setError(null);
+      } catch (err) {
+        console.error("Error fetching team data:", err);
+        setError("Failed to load team data");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      bg: "bg-gradient-to-br from-purple-800 to-pink-800",
-
-      image: "/bhavik-siddhpura-min.JPG",
-    },
-    {
-      name: "Elina",
-
-      role: "Chief Operations Executive",
-
-      bg: "bg-gradient-to-br from-purple-800 to-pink-800",
-
-      image: "/Eleey.jpg",
-    },
-
-    {
-      name: "Aviral",
-
-      role: "Web Developer",
-
-      bg: "bg-gradient-to-br from-red-500 to-orange-500",
-
-      image: "/aviral.jpeg",
-    },
-
-    {
-      name: "Kriti",
-
-      role: "Web Developer",
-
-      bg: "bg-gradient-to-br from-purple-400 to-blue-400",
-
-      image: "/Kriti.jpeg",
-    },
-
-    {
-      name: "Gobin",
-
-      role: "Senior Graphic Designer",
-
-      bg: "bg-gradient-to-br from-purple-400 to-indigo-400",
-
-      image: "/gobin.JPG",
-    },
-
-    {
-      name: "Ajay",
-
-      role: "Graphic Designer",
-
-      bg: "bg-gradient-to-br from-pink-300 to-rose-300",
-
-      image: "/Azay.jpg",
-    },
-
-    {
-      name: "Sagar",
-
-      role: "SEO Executive",
-
-      bg: "bg-gradient-to-br from-purple-800 to-pink-800",
-
-      image: "/sagar.jpg",
-    },
-
-    {
-      name: "Sworup",
-
-      role: "Video Editor",
-
-      bg: "bg-gradient-to-br from-red-500 to-orange-500",
-
-      image: "/Swarup.JPG",
-    },
-
-    {
-      name: "Ankit",
-
-      role: "Social Media Executive",
-
-      bg: "bg-gradient-to-br from-purple-400 to-blue-400",
-
-      image: "/ankitdawadii.png",
-    },
-  ];
+    fetchTeamData();
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -112,14 +57,66 @@ export default function TeamSection() {
     },
   };
 
+  const loadingVariants = {
+    animate: {
+      rotate: 360,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        ease: easeOut,
+      },
+    },
+  };
+
+  if (loading) {
+    return (
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-orange-500 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
+            Meet Our Team
+          </h2>
+          <div className="flex justify-center items-center">
+            <motion.div
+              className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full"
+              variants={loadingVariants}
+              animate="animate"
+            />
+          </div>
+          <p className="text-white/80 mt-4">Loading our amazing team...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-orange-500 relative">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+            Meet Our Team
+          </h2>
+          <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-6 backdrop-blur-md">
+            <p className="text-white text-lg">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="mt-4 px-6 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-white transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-orange-500  relative">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-600 to-orange-500 relative">
       {/* Clean minimal header */}
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
           Meet Our Team
         </h2>
-        <p className="text-lg text-muted max-w-2xl mx-auto">
+        <p className="text-lg text-white/80 max-w-2xl mx-auto">
           The passionate minds behind our innovation
         </p>
       </div>
@@ -132,9 +129,9 @@ export default function TeamSection() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {teamMembers.map((member, index) => (
+        {teamMembers.map((member: TeamMember, index: number) => (
           <motion.div
-            key={index}
+            key={member.id || index}
             className="relative group cursor-pointer"
             variants={cardVariants}
             whileHover={{ y: -8 }}
@@ -144,8 +141,8 @@ export default function TeamSection() {
             <div className="relative h-72 rounded-2xl overflow-hidden bg-gray-100">
               {/* Clean profile image */}
               <Image
-                src={member.image}
-                alt={member.name}
+                src={member.profile_picture}
+                alt={member.full_name}
                 fill
                 className="w-full h-full object-cover"
               />
@@ -188,9 +185,11 @@ export default function TeamSection() {
                   {/* Text content */}
                   <div className="relative z-10 p-4">
                     <h3 className="text-lg font-semibold text-white mb-1">
-                      {member.name}
+                      {member.full_name}
                     </h3>
-                    <p className="text-sm text-white/90">{member.role}</p>
+                    <p className="text-sm text-white/90">
+                      {member.designation}
+                    </p>
                   </div>
                 </div>
               </motion.div>

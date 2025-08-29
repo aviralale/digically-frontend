@@ -16,18 +16,31 @@ import {
   Calendar,
   Award,
   Coffee,
+  AlertCircle,
 } from "lucide-react";
+import axios from "axios";
+
+interface ContactFormData {
+  full_name: string;
+  email_address: string;
+  company_name: string;
+  service_needed: string;
+  budget_range: string;
+  project_details: string;
+}
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    budget: "",
-    message: "",
+  const [formData, setFormData] = useState<ContactFormData>({
+    full_name: "",
+    email_address: "",
+    company_name: "",
+    service_needed: "",
+    budget_range: "",
+    project_details: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -38,23 +51,57 @@ export default function ContactPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Clear error when user starts typing
+    if (error) setError(null);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        service: "",
-        budget: "",
-        message: "",
-      });
-    }, 3000);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await axios.post(
+        "https://api.digically.in/api/contacts/inquiries/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log("Form submitted successfully:", response.data);
+      setIsSubmitted(true);
+
+      // Reset form after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          full_name: "",
+          email_address: "",
+          company_name: "",
+          service_needed: "",
+          budget_range: "",
+          project_details: "",
+        });
+      }, 5000);
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      if (axios.isAxiosError(err)) {
+        if (err.response?.status === 400) {
+          setError("Please check your form data and try again.");
+        } else if (err.response?.status === 500) {
+          setError("Server error. Please try again later.");
+        } else {
+          setError("Failed to send message. Please try again.");
+        }
+      } else {
+        setError("Network error. Please check your connection.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Function to scroll to the contact form
@@ -271,6 +318,14 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              {/* Error Message */}
+              {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3">
+                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                  <p className="text-red-700 text-sm">{error}</p>
+                </div>
+              )}
+
               {isSubmitted ? (
                 <div className="text-center py-8 sm:py-12">
                   <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full mb-4 sm:mb-6 animate-bounce">
@@ -296,11 +351,12 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        value={formData.name}
+                        name="full_name"
+                        value={formData.full_name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                        disabled={isSubmitting}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                         placeholder="John Doe"
                       />
                     </div>
@@ -310,11 +366,12 @@ export default function ContactPage() {
                       </label>
                       <input
                         type="email"
-                        name="email"
-                        value={formData.email}
+                        name="email_address"
+                        value={formData.email_address}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                        disabled={isSubmitting}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                         placeholder="john@company.com"
                       />
                     </div>
@@ -326,10 +383,11 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="company"
-                      value={formData.company}
+                      name="company_name"
+                      value={formData.company_name}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                      disabled={isSubmitting}
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                       placeholder="Your Company"
                     />
                   </div>
@@ -340,10 +398,11 @@ export default function ContactPage() {
                         Service Needed
                       </label>
                       <select
-                        name="service"
-                        value={formData.service}
+                        name="service_needed"
+                        value={formData.service_needed}
                         onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                        disabled={isSubmitting}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                       >
                         <option value="">Select a service</option>
                         {services.map((service, index) => (
@@ -358,10 +417,11 @@ export default function ContactPage() {
                         Budget Range
                       </label>
                       <select
-                        name="budget"
-                        value={formData.budget}
+                        name="budget_range"
+                        value={formData.budget_range}
                         onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base"
+                        disabled={isSubmitting}
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                       >
                         <option value="">Select budget range</option>
                         {budgetRanges.map((range, index) => (
@@ -378,22 +438,33 @@ export default function ContactPage() {
                       Project Details *
                     </label>
                     <textarea
-                      name="message"
-                      value={formData.message}
+                      name="project_details"
+                      value={formData.project_details}
                       onChange={handleInputChange}
                       required
+                      disabled={isSubmitting}
                       rows={5}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none text-sm sm:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                       placeholder="Tell us about your project, goals, and any specific requirements..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 sm:space-x-3 hover:shadow-xl transition-all hover:scale-105 group"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-2 sm:space-x-3 hover:shadow-xl transition-all hover:scale-105 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <span>Send Message</span>
-                    <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Send Message</span>
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
