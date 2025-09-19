@@ -149,7 +149,7 @@ export default function FounderSection() {
                 transition={{ duration: 1.2 }}
               >
                 <Image
-                  src="/founder.jpeg"
+                  src="/reenal.JPG"
                   alt="Rinal Siddhpura - Founder"
                   className="w-full h-full object-cover"
                   fill
